@@ -3,7 +3,9 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Read Some Reddits!</title>
+  <title>Trending Reddits</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -13,7 +15,7 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <h1>Read Some Reddits!</h1>
+      <h1>Trending Reddits</h1>
     </div>
   </div>
 
@@ -25,8 +27,18 @@
       <ul class="list-unstyled" ng-if="ctrl.reddit.data.children">
         <li ng-repeat="story in ctrl.reddit.data.children">
           <a href="{{story.data.url}}" target="_blank">
-            <h4>{{story.data.title}} &mdash; {{story.data.ups}}</h4>
+            <div class="img-container hidden-xs">
+              <img src="{{story.data.thumbnail}}">
+            </div>
+
+            <div class="ups-container hidden-xs">
+              <h4><span class="label label-default">{{story.data.ups}}</span></h4>
+            </div>
+
+            <h4 class="story-title">{{story.data.title}}<span class="visible-xs">&mdash; {{story.data.ups}}</span></h4>
           </a>
+        </li>
+        <li><h3 class="text-center">That's all folks!</h3></li>
       </ul>
     </div>
   </div>
@@ -34,7 +46,7 @@
 
 
 
-  <pre>{{ctrl.reddit | json}}</pre>
+  <!-- <pre>{{ctrl.reddit | json}}</pre> -->
 
   </div>
 

@@ -11,12 +11,43 @@ h1 {
   color: #f2efbb;
 }
 
+h4 {
+  margin: 0;
+}
+
 a,
 p,
 li {
-  color: #eef2e9;
+  position: relative;
+  color:    #eef2e9;
 }
 
 a:hover {
   color: #f2bb98;
-};
+}
+
+li {
+  border-top:     1px solid;
+  padding-top:    1em;
+  padding-bottom: 1em;
+  padding-left:   0.5em;
+  padding-right:  0.5em;
+  overflow: hidden;
+}
+
+li:first-child {
+  border-top: none;
+}
+
+.img-container {
+  /*width:        5em;*/
+  height:       5em;
+  float:        left;
+  margin-right: 1em;
+  overflow:     hidden;
+}
+
+.ups-container {
+  float: right;
+  margin-left: 1em;
+}
