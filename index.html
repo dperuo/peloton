@@ -5,22 +5,34 @@
   <meta charset="utf-8">
   <title>Read Some Reddits!</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="app/css/app.css">
 </head>
-<body ng-controller="redditCtrl as ctrl">
+<body class="container-fluid" ng-controller="redditCtrl as ctrl">
 
-  <div style="container" >
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>Read Some Reddits!</h1>
+    </div>
+  </div>
 
-  <ul ng-if="ctrl.reddit.data.children">
-    <li ng-repeat="story in ctrl.reddit.data.children">
-      {{story.data.title}} &mdash; {{story.data.ups}}
-    </li>
-  </ul>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
 
-  <h4 ng-if="ctrl.reddit.errorMsg">{{ctrl.reddit.errorMsg}}</h4>
+      <h1 ng-if="ctrl.reddit.errorMsg"><small>{{ctrl.reddit.errorMsg}}</small></h1>
+
+      <ul class="list-unstyled" ng-if="ctrl.reddit.data.children">
+        <li ng-repeat="story in ctrl.reddit.data.children">
+          <a href="{{story.data.url}}" target="_blank">
+            <h4>{{story.data.title}} &mdash; {{story.data.ups}}</h4>
+          </a>
+      </ul>
+    </div>
+  </div>
+
+
+
 
   <pre>{{ctrl.reddit | json}}</pre>
 

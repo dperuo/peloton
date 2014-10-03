@@ -12,7 +12,7 @@ function RedditAjax($http) {
         callback(data);
       })
       .error(function(){
-        callback({ errorMsg: "Oops, there was an error loading the list..." })
+        callback({ errorMsg: "Oops, there was an error loading your list..." })
       });
     }
   };

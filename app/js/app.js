@@ -9,7 +9,6 @@ function redditCtrl(RedditAjax) {
 
   RedditAjax.getReddits(function(reddit) {
     vm.reddit = reddit;
-    // vm.reddit = reddit.data.children;
   });
 }
 
