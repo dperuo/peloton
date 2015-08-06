@@ -29,8 +29,8 @@
       <ul class="list-unstyled" ng-if="ctrl.reddit.data.children">
         <li ng-repeat="story in ctrl.reddit.data.children">
           <a href="{{story.data.url}}" target="_blank">
-            <div class="img-container hidden-xs">
-              <img ng-src="{{story.data.thumbnail}}" ng-if="story.data.thumbnail">
+            <div ng-if="story.data.thumbnail" class="img-container hidden-xs">
+              <img ng-src="{{story.data.thumbnail}}">
             </div>
 
             <div class="ups-container">
